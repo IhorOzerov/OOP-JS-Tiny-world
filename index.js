@@ -14,19 +14,21 @@ class Animal extends Inhabitant{
       super(creature, name, gender, 4, friends, say);
    }
    inhabitantSpeech() {
-   return `Sup, i am a ${this.creature}, my name is ${this.name}, i am cool ${this.gender} with all of my ${this.legs} legs and my friends ${this.friends}, I want${this.say}` 
+      return`Sup, i am a ` + this.creature + `, my name is ` + this.name +
+         `, i am cool ` + this.gender + `, with all of my ` + this.legs +
+         ` legs and my friends ` + this.friends + ` I want ` + this.say
    }
 }
 
 class Cat extends Animal{
    constructor(name, gender, friends) {
-      super("Cat", name, gender, friends, " to say Where is my money, Gregory?!"); 
+      super("Cat", name, gender, friends, "to say Where is my money, Gregory?!");
    }
 }
 
 class Dog extends Animal{
    constructor(name, gender, friends) {
-      super("Dog", name, gender, friends, " to say that you are breathtaking!");
+      super("Dog", name, gender, friends, "to say that you are breathtaking!");
    }
 }
 
@@ -36,26 +38,28 @@ class Human extends Inhabitant{
       this.hands = 2
    }
    inhabitantSpeech() {
-   return `Hi, i am a ${this.creature}, my name is ${this.name}, i am nice ${this.gender}, with my ${this.hands} hands, ${this.legs} legs and my friends ${this.friends} I want${this.say}` 
+      return `Hi, i am a ` + this.creature + `, my name is ` + this.name +
+         `, i am nice ` + this.gender + `, with my ` + this.hands + ` hands, ` +
+         this.legs + ` legs and my friends ` + this.friends + ` I want ` + this.say
    }
 }
    
 class Man extends Human{
    constructor(name, friends) {
-      super(name, "male", friends, " to Stage 1!"); 
+      super(name, "male", friends, "to Stage 1!"); 
    }
 }
 
 class Woman extends Human{
    constructor(name, friends) {
-      super(name, "female", friends, ' to learn React');
+      super(name, "female", friends, 'to learn React!');
    }
 }
 
 class CatWoman extends Woman{
     constructor(name, friends) {
       super(name, friends);
-      this.say = Gangster.say
+      this.say = Object.getOwnPropertyDescriptors(new Cat).say.value
       this.creature = "Cat-Woman"
    }
 }
