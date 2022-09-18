@@ -41,7 +41,7 @@ class Human extends Inhabitant{
       super("Human", name, gender, 2, friends, say);
       this.hands = 2
    }
-   inhabitantSpeech(handsText) {
+   inhabitantSpeech() {
       return super.inhabitantSpeech(`Hi, i am a `, `, my name is `, `, i am nice `, `. With my ` + this.hands + ` hands, `,
          ` legs and my friends, `, ` I want `)
    }
@@ -68,11 +68,17 @@ class CatWoman extends Woman{
 }
 
 let Gangster = new Cat("Gangster", "male", "Yohanna and Vanessa");
+let Nancy = new Cat("Nancy", "female", "Gangster and Vanessa")
 let Gregory = new Man("Gregory", "Vanessa and Bandit");
-let Yohanna = new Woman("Yohanna", "Gangster and Gregory");
+let Andy = new Man("Andy", "Rosemary and Charlotte");
+let Peter = new Man("Peter", "Nancy and Bandit");
 let Bandit = new Dog('Bandit', 'male', "Gregory and Gangster");
+let Rosemary = new Dog('Rosemary', 'female', "Bandit and Yohanna");
+let Yohanna = new Woman("Yohanna", "Gangster and Gregory");
+let Charlotte = new Woman('Charlotte', 'July and Bandit');
+let July = new Woman("July", "Nance and Charlotte");
 let Vanessa = new CatWoman("Vanessa", "Gangster and Yohanna");
 
-const members = [Gangster, Bandit, Gregory, Yohanna, Vanessa];
+const members = [Gangster, Nancy, Gregory, Andy, Peter, Bandit, Rosemary, Yohanna, Charlotte, July, Vanessa];
 
 members.map(member => print(member.inhabitantSpeech()));
